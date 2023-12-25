@@ -4,7 +4,7 @@
 --
 --
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "lua" },
+  pattern = { "lua" , 'python'},
   callback = function()
     vim.b.autoformat = false
   end,
