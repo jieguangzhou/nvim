@@ -4,6 +4,13 @@
 --
 --
 local map = vim.keymap.set
-
+local wk = require("which-key")
 
 map("n", "<C-w>", "<cmd>w<cr><esc>", { desc = "Save file" })
+
+wk.register({
+  b = {
+    name = "Buffer",
+    b = { "<cmd>Telescope buffers<cr>", "Find Buffer" },
+  },
+}, { prefix = "<leader>" })
