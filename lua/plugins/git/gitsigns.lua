@@ -1,3 +1,4 @@
+-- Git: refresh gitsigns after external git changes.
 return {
   {
     "lewis6991/gitsigns.nvim",

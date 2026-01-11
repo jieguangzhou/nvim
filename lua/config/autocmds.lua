@@ -1,6 +1,6 @@
--- Autocmds are automatically loaded on the VeryLazy event
+-- Core: custom autocmds loaded on VeryLazy.
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
--- Add any additional autocmds here
+-- Add any additional autocmds here.
 
 -- Note: Auto-formatting is now disabled globally in options.lua
 -- The following autocmd is no longer needed but kept for reference

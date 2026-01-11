@@ -1,3 +1,4 @@
+-- UI: Noice cmdline popup with stable highlighting.
 return {
   {
     "folke/noice.nvim",

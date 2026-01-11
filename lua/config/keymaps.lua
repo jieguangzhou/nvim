@@ -1,6 +1,6 @@
--- Keymaps are automatically loaded on the VeryLazy event
+-- Core: custom keymaps loaded on VeryLazy.
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- Add any additional keymaps here.
 --
 --
 local map = vim.keymap.set

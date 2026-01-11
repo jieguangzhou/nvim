@@ -1,3 +1,4 @@
+-- Lang: Markdown rendering + helper tools.
 return {
   {
     "nvim-treesitter/nvim-treesitter",

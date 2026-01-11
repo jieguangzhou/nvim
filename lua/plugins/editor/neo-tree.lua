@@ -1,10 +1,7 @@
+-- Editor: ensure neo-tree refreshes on focus to avoid stale git/file markers.
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
-    opts = function(_, opts)
-      opts.filesystem = opts.filesystem or {}
-      opts.filesystem.use_libuv_file_watcher = true
-    end,
     init = function()
       local function refresh()
         if not package.loaded["neo-tree"] then

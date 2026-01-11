@@ -1,4 +1,4 @@
-local lsp = vim.g.lazyvim_python_lsp or "pyright"
+-- Lang: Python tooling (Pyright + Ruff) with stable root and LSP attach behavior.
 local ruff = vim.g.lazyvim_python_ruff or "ruff"
 
 local function pyright_workspace_root(fname)
@@ -177,7 +177,6 @@ return {
     opts = {
       adapters = {
         ["neotest-python"] = {
-          -- Here you can specify the settings for the adapter, i.e.
           -- runner = "pytest",
           -- python = ".venv/bin/python",
         },
@@ -191,8 +190,8 @@ return {
       "mfussenegger/nvim-dap-python",
       -- stylua: ignore
       keys = {
-        { "<leader>dPt", function() require('dap-python').test_method() end, desc = "Debug Method", ft = "python" },
-        { "<leader>dPc", function() require('dap-python').test_class() end, desc = "Debug Class", ft = "python" },
+        { "<leader>dPt", function() require("dap-python").test_method() end, desc = "Debug Method", ft = "python" },
+        { "<leader>dPc", function() require("dap-python").test_class() end, desc = "Debug Class", ft = "python" },
       },
       config = function()
         if vim.fn.has("win32") == 1 then
@@ -203,10 +202,9 @@ return {
       end,
     },
   },
-
   {
     "linux-cultist/venv-selector.nvim",
-    branch = "regexp", -- Use this branch for the new version
+    branch = "regexp",
     cmd = "VenvSelect",
     enabled = function()
       return LazyVim.has("telescope.nvim")
@@ -218,11 +216,9 @@ return {
         },
       },
     },
-    --  Call config for python files and load the cached venv automatically
     ft = "python",
     keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
   },
-
   {
     "hrsh7th/nvim-cmp",
     optional = true,
@@ -231,9 +227,8 @@ return {
       table.insert(opts.auto_brackets, "python")
     end,
   },
-
-  -- Don't mess up DAP adapters provided by nvim-dap-python
   {
+    -- Avoid overriding adapters provided by nvim-dap-python
     "jay-babu/mason-nvim-dap.nvim",
     optional = true,
     opts = {
